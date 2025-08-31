@@ -1,0 +1,189 @@
+openapi: 3.1.0
+paths:
+  /api/v1/app-versions:
+    get:
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AppVersion'
+      summary: Get App Versions
+      tags:
+        - AppVersions
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewAppVersion'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppVersion'
+      summary: Create New App Version
+      tags:
+        - AppVersions
+  /api/v1/app-versions/{id}:
+    get:
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppVersion'
+      summary: Get App Version by ID
+      tags:
+        - AppVersions
+    put:
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AppVersion'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppVersion'
+      summary: Update App Version by ID
+      tags:
+        - AppVersions
+components:
+  schemas:
+    AppPhase:
+      type: object
+      required:
+        - type
+        - status
+      properties:
+        type:
+          $ref: '#/components/schemas/AppPhaseType'
+        status:
+          $ref: '#/components/schemas/AppStatusEnum'
+    OrdinaryAppPhase:
+      allOf:
+        - $ref: '#/components/schemas/AppPhase'
+        - type: object
+          required:
+            - startDate
+            - endDate
+          properties:
+            startDate:
+              type: string
+            endDate:
+              type: string
+            causesProductionDelay:
+              type: boolean
+    ProductionAppPhase:
+      allOf:
+        - $ref: '#/components/schemas/AppPhase'
+        - type: object
+          required:
+            - releaseDate
+          properties:
+            releaseDate:
+              type: string
+            delayedReleaseDate:
+              type: string
+    AppPhaseType:
+      type: string
+      enum:
+        - DELIVERY_1
+        - DELIVERY_2
+        - TESTING
+        - USER_TESTING
+        - PRODUCTION
+    AppStatusEnum:
+      type: string
+      enum:
+        - NOT_STARTED
+        - IN_PROGRESS
+        - COMPLETED
+        - DELAYED
+    NewAppVersion:
+      type: object
+      required:
+        - version
+        - phases
+      properties:
+        version:
+          type: string
+        phases:
+          type: object
+          required:
+            - delivery1
+            - delivery2
+            - testing
+            - userTesting
+            - production
+          properties:
+            delivery1:
+              $ref: '#/components/schemas/OrdinaryAppPhase'
+            delivery2:
+              $ref: '#/components/schemas/OrdinaryAppPhase'
+            testing:
+              $ref: '#/components/schemas/OrdinaryAppPhase'
+            userTesting:
+              $ref: '#/components/schemas/OrdinaryAppPhase'
+            production:
+              $ref: '#/components/schemas/ProductionAppPhase'
+    AppVersion:
+      type: object
+      required:
+        - id
+        - version
+        - phases
+      properties:
+        id:
+          type: string
+        version:
+          type: string
+        phases:
+          type: object
+          required:
+            - delivery1
+            - delivery2
+            - testing
+            - userTesting
+            - production
+          properties:
+            delivery1:
+              $ref: '#/components/schemas/OrdinaryAppPhase'
+            delivery2:
+              $ref: '#/components/schemas/OrdinaryAppPhase'
+            testing:
+              $ref: '#/components/schemas/OrdinaryAppPhase'
+            userTesting:
+              $ref: '#/components/schemas/OrdinaryAppPhase'
+            production:
+              $ref: '#/components/schemas/ProductionAppPhase'
+info:
+  title: api API
+  version: 1.0.0-SNAPSHOT
+tags:
+  - name: AppVersions
+    description: Operations related to app versions

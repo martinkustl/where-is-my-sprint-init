@@ -1,0 +1,139 @@
+{
+  "mainLayout": {
+    "title": "Sprint Delivery Tracker"
+  },
+  "layoutWithBackButton": {
+    "backButton": "Back to Dashboard"
+  },
+  "appVersionForm": {
+    "form": {
+      "appVersionName": {
+        "label": "App version name"
+      },
+      "sprintOneSection": {
+        "name": "Delivery Sprint 1",
+        "dateRange": {
+          "label": "Delivery Sprint 1"
+        }
+      },
+      "sprintTwoSection": {
+        "name": "Delivery Sprint 2",
+        "dateRange": {
+          "label": "Delivery Sprint 2"
+        }
+      },
+      "sprintTestSection": {
+        "name": "Testing Sprint",
+        "dateRange": {
+          "label": "Test Sprint"
+        }
+      },
+      "sprintUserTestingSection": {
+        "name": "User Testing Sprint",
+        "dateRange": {
+          "label": "User testing Sprint"
+        }
+      },
+      "releaseSection": {
+        "name": "Production Release",
+        "releaseDate": {
+          "label": "Release Date"
+        },
+        "delayedReleaseDate": {
+          "label": "Delayed Release Date (optional)"
+        }
+      },
+      "phaseStatusSelect": {
+        "label": "Phase Status",
+        "placeholder": "Select app phase status",
+        "options": {
+          "notStarted": "Not started",
+          "inProgress": "In Progress",
+          "completed": "Completed",
+          "delayed": "Delayed"
+        }
+      },
+      "submitButton": {
+        "label": "Submit App Version"
+      }
+    }
+  },
+  "editAppVersionPage": {
+    "title": "Edit App Version",
+    "loading": {
+      "title": "Loading app version data..."
+    },
+    "notFound": {
+      "title": "App version not found"
+    }
+  },
+  "appVersionNewPage": {
+    "title": "New App Version"
+  },
+  "appVersions": {
+    "header": {
+      "title": "Sprint Delivery Tracker",
+      "description": "Track the delivery of your app version through various sprints and phases.",
+      "createNew": "Add version"
+    },
+    "table": {
+      "header": {
+        "headerColumns": {
+          "version": {
+            "label": "Version"
+          },
+          "deliverySprintOne": {
+            "label": "Delivery Phase",
+            "description": "First development sprint"
+          },
+          "deliverySprintTwo": {
+            "label": "Delivery Phase 2",
+            "description": "Second development sprint"
+          },
+          "testingSprint": {
+            "label": "Testing Phase",
+            "description": "QA and automated testing"
+          },
+          "userTestingSprint": {
+            "label": "User Testing Phase",
+            "description": "User acceptance testing"
+          },
+          "productionRelease": {
+            "label": "Production Release",
+            "description": "Production deployment"
+          },
+          "actions": {
+            "label": "Actions"
+          }
+        }
+      },
+      "body": {
+        "columns": {
+          "view": {
+            "label": "View"
+          },
+          "statusBadge": {
+            "badge": {
+              "notStarted": "Not Started",
+              "inProgress": "In Progress",
+              "completed": "Completed",
+              "delayed": "Delayed"
+            }
+          },
+          "date": {
+            "notStarted": "Not Started"
+          },
+          "appVersion": {
+            "delayedProdLabel": "Prod Delayed"
+          },
+          "sprint": {
+            "delayedProductionDate": "New Target Date"
+          }
+        }
+      }
+    }
+  },
+  "submitButton": {
+    "loading": "Submitting..."
+  }
+}

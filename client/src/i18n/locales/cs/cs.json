@@ -1,0 +1,139 @@
+{
+  "mainLayout": {
+    "title": "Sledování Dodávek Sprintů"
+  },
+  "layoutWithBackButton": {
+    "backButton": "Zpět na Dashboard"
+  },
+  "appVersionForm": {
+    "form": {
+      "appVersionName": {
+        "label": "Název verze aplikace"
+      },
+      "sprintOneSection": {
+        "name": "Dodávkový Sprint 1",
+        "dateRange": {
+          "label": "Dodávkový Sprint 1"
+        }
+      },
+      "sprintTwoSection": {
+        "name": "Dodávkový Sprint 2",
+        "dateRange": {
+          "label": "Dodávkový Sprint 2"
+        }
+      },
+      "sprintTestSection": {
+        "name": "Testovací Sprint",
+        "dateRange": {
+          "label": "Testovací Sprint"
+        }
+      },
+      "sprintUserTestingSection": {
+        "name": "Uživatelské Testování Sprint",
+        "dateRange": {
+          "label": "Uživatelské Testování Sprint"
+        }
+      },
+      "releaseSection": {
+        "name": "Produkční Vydání",
+        "releaseDate": {
+          "label": "Datum Vydání"
+        },
+        "delayedReleaseDate": {
+          "label": "Odložené Datum Vydání (volitelné)"
+        }
+      },
+      "phaseStatusSelect": {
+        "label": "Stav Fáze",
+        "placeholder": "Vyberte stav fáze aplikace",
+        "options": {
+          "notStarted": "Nezahájeno",
+          "inProgress": "Probíhá",
+          "completed": "Dokončeno",
+          "delayed": "Zpožděno"
+        }
+      },
+      "submitButton": {
+        "label": "Odeslat Verzi Aplikace"
+      }
+    }
+  },
+  "editAppVersionPage": {
+    "title": "Upravit Verzi Aplikace",
+    "loading": {
+      "title": "Načítání dat verze aplikace..."
+    },
+    "notFound": {
+      "title": "Verze aplikace nenalezena"
+    }
+  },
+  "appVersionNewPage": {
+    "title": "Nová Verze Aplikace"
+  },
+  "appVersions": {
+    "header": {
+      "title": "Sledování Dodávek Sprintů",
+      "description": "Sledujte dodávku vaší verze aplikace napříč různými sprinty a fázemi.",
+      "createNew": "Přidat verzi"
+    },
+    "table": {
+      "header": {
+        "headerColumns": {
+          "version": {
+            "label": "Verze"
+          },
+          "deliverySprintOne": {
+            "label": "Dodávková Fáze",
+            "description": "První vývojový sprint"
+          },
+          "deliverySprintTwo": {
+            "label": "Dodávková Fáze 2",
+            "description": "Druhý vývojový sprint"
+          },
+          "testingSprint": {
+            "label": "Testovací Fáze",
+            "description": "QA a automatizované testování"
+          },
+          "userTestingSprint": {
+            "label": "Fáze Uživatelského Testování",
+            "description": "Uživatelské akceptační testování"
+          },
+          "productionRelease": {
+            "label": "Produkční Vydání",
+            "description": "Produkční nasazení"
+          },
+          "actions": {
+            "label": "Akce"
+          }
+        }
+      },
+      "body": {
+        "columns": {
+          "view": {
+            "label": "Zobrazit"
+          },
+          "statusBadge": {
+            "badge": {
+              "notStarted": "Nezahájeno",
+              "inProgress": "Probíhá",
+              "completed": "Dokončeno",
+              "delayed": "Zpožděno"
+            }
+          },
+          "date": {
+            "notStarted": "Nezahájeno"
+          },
+          "appVersion": {
+            "delayedProdLabel": "Produkce Zpožděna"
+          },
+          "sprint": {
+            "delayedProductionDate": "Nový Cílový Termín"
+          }
+        }
+      }
+    }
+  },
+  "submitButton": {
+    "loading": "Odesílání..."
+  }
+}
